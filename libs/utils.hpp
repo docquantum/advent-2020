@@ -18,7 +18,7 @@ namespace docquantum
         std::vector<std::string> lines = std::vector<std::string>();
         
         if(!file.is_open())
-            return lines;
+            throw "File not found!";
         
         lines.reserve(1000);
         
