@@ -36,6 +36,19 @@ namespace docquantum
         return lines;
     }
 
+    std::string readFileIntoLine(const std::string &filename)
+    {
+        std::ifstream file(filename);
+        std::stringstream strStream;
+        
+        if(!file.is_open())
+            throw "File not found!";
+        
+        strStream << file.rdbuf();
+    
+        return strStream.str();
+    }
+
     /**
      * @brief Splits a string by the regex into a vector of tokens
      * 
